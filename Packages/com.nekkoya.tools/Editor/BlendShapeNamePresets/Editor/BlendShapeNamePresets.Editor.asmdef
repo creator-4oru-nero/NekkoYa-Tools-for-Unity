@@ -1,0 +1,7 @@
+{
+  "name": "LocalTools.BlendShapeNamePresets.Editor",
+  "rootNamespace": "NekkoYa.BlendShapeNamePresets",
+  "references": ["NekkoYa.Tools.Common.Editor"],
+  "includePlatforms": ["Editor"],
+  "autoReferenced": false
+}
