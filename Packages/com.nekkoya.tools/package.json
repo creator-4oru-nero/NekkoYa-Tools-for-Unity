@@ -2,7 +2,7 @@
   "name": "com.nekkoya.tools",
   "version": "1.0.0-pre.1",
   "displayName": "NekkoYa Tools for Unity",
-  "description": "Six Unity editor tools with shared Japanese, English and Korean UI.",
+  "description": "Seven Unity editor tools with shared Japanese, English and Korean UI.",
   "unity": "2022.3",
   "author": { "name": "NekkoYa" },
   "keywords": ["editor", "avatar", "nekkoya"]

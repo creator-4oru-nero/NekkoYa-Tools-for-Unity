@@ -1,6 +1,6 @@
 # NekkoYa Tools for Unity
 
-Unity 2022.3.22f1용 Editor 도구 6개입니다. 1.0.0 개수판은 **Unreleased / 1.0.0-pre.1** 상태입니다. Unity 컴파일, 실제 동작 확인 및 정식 공개 승인은 아직 진행하지 않았습니다.
+Unity 2022.3.22f1용 Editor 도구 7개입니다. 1.0.0 개수판은 **Unreleased / 1.0.0-pre.1** 상태입니다. Unity 컴파일, 실제 동작 확인 및 정식 공개 승인은 아직 진행하지 않았습니다.
 
 ## 도구와 사용법
 
@@ -14,6 +14,7 @@ Unity 최상위 `NekkoYa` 메뉴에서 엽니다. 도구 이름과 창 제목은
 | Shape Key List | 프리팹 또는 씬 오브젝트의 메시와 블렌드 셰이프를 비활성 자식까지 표시하고 복사합니다. 에셋은 편집하지 않습니다. |
 | VRC Data Checker | Assets 내부 배포 폴더, 용도, PC/Mobile을 선택해 검사합니다. 종류/중요도/검색으로 결과와 권장 조치를 확인하고 복사/Markdown 출력합니다. |
 | Prefab Full Sync | Hierarchy 원본과 Assets 내부 대상 프리팹을 지정합니다. 차이를 확인하고 승인한 뒤 백업하여 전체 반영합니다. |
+| PhysBone Organizer | Hierarchy의 아바타를 지정하여 아마추어를 자동 감지합니다. 후보를 선택하거나 수동 지정하고 대상과 씬 참조 수를 확인한 뒤 PhysBone을 아바타 바로 아래 PB로 정리합니다. |
 
 ## 설치 및 이전
 
@@ -22,10 +23,12 @@ Unity 최상위 `NekkoYa` 메뉴에서 엽니다. 도구 이름과 창 제목은
 3. Package Manager → `+` → `Add package from git URL...`에 입력합니다.
 
 ```text
-https://github.com/creator-4oru-nero/NekkoYa-Tools-for-Unity.git?path=/Packages/com.nekkoya.tools#refactor/unity-v1.0.0
+https://github.com/creator-4oru-nero/NekkoYa-Tools-for-Unity.git?path=/Packages/com.nekkoya.tools#refactor/physbone-organizer-v1.0.0
 ```
 
-아직 미공개 개발 브랜치입니다. 비공개 저장소이므로 GitHub 접근 권한과 로컬 Git 인증이 필요합니다. 정식 승인 후 확인된 커밋 또는 태그로 고정하세요. Unity 표준 API를 사용하며 외부 라이브러리를 새로 추가하지 않았습니다. VRChat SDK, Modular Avatar, lilToon은 필수 의존성이 아닙니다. 기존 선택적 연동을 유지하며 특정 버전의 실제 호환성은 미검증입니다.
+아직 미공개 개발 브랜치입니다. 비공개 저장소이므로 GitHub 접근 권한과 로컬 Git 인증이 필요합니다. 정식 승인 후 확인된 커밋 또는 태그로 고정하세요. Unity 표준 API를 우선하며 외부 라이브러리를 새로 추가하지 않았습니다. 기존 6개 도구에는 VRChat SDK, Modular Avatar, lilToon이 필수가 아닙니다. 기존 선택적 연동을 유지하며 특정 버전의 실제 호환성은 미검증입니다.
+
+**PhysBone Organizer 실행에는 VRChat SDK Avatars의 VRCPhysBone이 필요합니다.** 기존 6개 도구에는 필수가 아닙니다. SDK 없이도 창은 열리지만 정리 기능은 비활성화됩니다. SDK의 구체적인 대응 버전은 미검증입니다. `rootTransform`을 읽을 수 없는 SDK에서는 데이터를 변경하기 전에 중지합니다.
 
 기존 스크립트 `.meta`, 프리셋 GUID, BOOTH 저장 위치와 JSON 형식, 블렌드 셰이프 JSON format/version을 유지합니다. 폴더 프리셋에는 이전 Editor 어셈블리에서의 이전 정보를 추가했습니다. 실제 Unity 타입 이전은 확인이 필요합니다. BOOTH 데이터는 계속 OS LocalApplicationData의 `BoothDescriptionStudio/library.json`을 사용합니다.
 
@@ -36,6 +39,7 @@ https://github.com/creator-4oru-nero/NekkoYa-Tools-for-Unity.git?path=/Packages/
 - 상품 본문, 약관, 이름, 사용자 입력 및 분석 정규식은 UI 언어 변경으로 수정하지 않습니다. 기존 일본어 상품 템플릿은 일본어로 유지합니다.
 - Asset Organizer: 시작 번호, 이름 템플릿, 대상 폴더와 프리셋을 설정합니다. 패키지 또는 읽기 전용 프리셋은 `Save As`로 Assets 내부에 복사한 뒤 편집하세요.
 - Blend Shape Name Presets: 저장된 렌더러에 새로 추가된 키만 0으로 만들지 선택할 수 있습니다.
+- PhysBone Organizer: 아바타와 대상 아마추어를 지정합니다. `Armature` / `アーマチュア` 및 연속 번호 이름을 자동 감지합니다. PB가 있으면 PB (1) 등을 새로 만들고 같은 이름의 본에도 고유한 저장 오브젝트를 만듭니다. Root Transform이 비어 있으면 원래 본을 지정하고 기존 지정값, 설정과 현재 활성 상태는 유지합니다.
 - VRC Data Checker: 제외/유지 패턴, 권장 임계값, Android 권장 형식, 외부 의존성 패턴 및 제외 프로퍼티를 설정합니다. 기존 `ProjectSettings/NekkoyaVRCDataChecker.asset`을 사용합니다.
 
 ## 데이터 보호 및 주의 사항
@@ -47,6 +51,10 @@ https://github.com/creator-4oru-nero/NekkoYa-Tools-for-Unity.git?path=/Packages/
 - 정상 조작에서는 불필요한 로그를 대량 출력하지 않으며 오류 로그에 `[NekkoYa][ToolName]`을 붙입니다. OS/Unity 예외는 해당 환경의 언어로 표시될 수 있습니다.
 
 ## 검증
+
+PhysBone Organizer는 원본 컴포넌트만 옮기며 본 계층을 유지합니다. 다른 열린 일반 씬의 컴포넌트 참조도 갱신하므로 관련 씬을 백업하세요. 에셋, 닫힌 씬, AnimationClip 경로와 이후 본 활성 상태 제어는 갱신하지 않습니다. 결과를 확인하고 씬을 수동 저장하세요. 플레이 모드, 프리팹 모드 및 서로 다른 씬의 대상 지정은 지원하지 않습니다. 중간 실패는 실행 취소로 복구하며 복구에도 실패하면 성공으로 표시하지 않고 알립니다.
+
+PhysBone Organizer 원본은 `Original/PhysBoneOrganizer/v0.1.0/NekkoYaPhysBoneOrganizer.cs`에 변경 없이 보관하며 `physbone-organizer-v0.1.0` 태그로 구분합니다.
 
 저장소 `scripts/verify_repository.py`로 원본 일치, GUID, 어셈블리 참조, 번역 키와 서식 인수를 검사합니다. C# 구문 분석은 Unity 컴파일 및 동작 확인과 다릅니다.
 
