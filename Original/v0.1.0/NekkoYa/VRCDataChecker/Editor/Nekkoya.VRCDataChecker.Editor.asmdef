@@ -1,0 +1,6 @@
+{
+  "name": "Nekkoya.VRCDataChecker.Editor",
+  "rootNamespace": "Nekkoya.VRCDataChecker",
+  "includePlatforms": ["Editor"],
+  "autoReferenced": true
+}

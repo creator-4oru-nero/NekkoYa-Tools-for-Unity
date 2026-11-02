@@ -1,0 +1,6 @@
+{
+  "name": "LocalTools.BlendShapeNamePresets.Editor",
+  "rootNamespace": "LocalTools.BlendShapeNamePresets",
+  "includePlatforms": ["Editor"],
+  "autoReferenced": false
+}
