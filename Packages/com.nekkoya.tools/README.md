@@ -6,4 +6,4 @@ Unreleased 1.0.0 candidate, targeting Unity 2022.3.22f1.
 - [English](README_EN.md)
 - [한국어](README_KR.md)
 
-Six Editor tools: BOOTH Description Studio, Asset Organizer, Blend Shape Name Presets, Shape Key List, VRC Data Checker and Prefab Full Sync.
+Seven Editor tools: BOOTH Description Studio, Asset Organizer, Blend Shape Name Presets, Shape Key List, VRC Data Checker, Prefab Full Sync and PhysBone Organizer. PhysBone Organizer requires VRChat SDK Avatars to run; the other tools remain available without it.

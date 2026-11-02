@@ -32,6 +32,10 @@ with zipfile.ZipFile(ORIGINAL / "source.zip") as archive:
     print(f"Original archive: {len(original_files)} files checked byte for byte")
 
 manifest = json.loads((PACKAGE / "package.json").read_text())
+physbone_original = ROOT / 'Original/PhysBoneOrganizer/v0.1.0/NekkoYaPhysBoneOrganizer.cs'
+check(physbone_original.exists() and hashlib.sha256(physbone_original.read_bytes()).hexdigest() ==
+      '8c8c0c0b3424073cf73bc02cdb21098c89f36203fe5b8e920e9074d5c249986e', 'Original PhysBone Organizer changed')
+print('PhysBone Organizer original: uploaded source SHA-256 checked')
 check(manifest["version"] == "1.0.0-pre.1", "Keep unreleased candidate version until approval")
 check(manifest["unity"] == "2022.3", "Unexpected Unity version")
 assemblies = {}
