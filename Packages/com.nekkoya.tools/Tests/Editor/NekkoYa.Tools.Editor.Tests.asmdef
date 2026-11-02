@@ -1,0 +1,9 @@
+{
+  "name": "NekkoYa.Tools.Editor.Tests",
+  "rootNamespace": "NekkoYa.Tests",
+  "references": ["NekkoYa.Tools.Editor", "NekkoYa.Tools.Common.Editor", "Nekkoya.VRCDataChecker.Editor"],
+  "includePlatforms": ["Editor"],
+  "optionalUnityReferences": ["TestAssemblies"],
+  "defineConstraints": ["UNITY_INCLUDE_TESTS"],
+  "autoReferenced": false
+}

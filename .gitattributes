@@ -1,0 +1,2 @@
+# Keep the imported Unity metadata bytes, including Unity's blank YAML values.
+*.meta whitespace=-blank-at-eol
