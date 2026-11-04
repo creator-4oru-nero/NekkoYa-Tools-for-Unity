@@ -36,7 +36,7 @@ physbone_original = ROOT / 'Original/PhysBoneOrganizer/v0.1.0/NekkoYaPhysBoneOrg
 check(physbone_original.exists() and hashlib.sha256(physbone_original.read_bytes()).hexdigest() ==
       '8c8c0c0b3424073cf73bc02cdb21098c89f36203fe5b8e920e9074d5c249986e', 'Original PhysBone Organizer changed')
 print('PhysBone Organizer original: uploaded source SHA-256 checked')
-check(manifest["version"] == "1.0.0-pre.1", "Keep unreleased candidate version until approval")
+check(manifest["version"] == "1.0.0-pre.2", "Keep unreleased candidate version until approval")
 check(manifest["unity"] == "2022.3", "Unexpected Unity version")
 assemblies = {}
 for path in PACKAGE.rglob('*.asmdef'):

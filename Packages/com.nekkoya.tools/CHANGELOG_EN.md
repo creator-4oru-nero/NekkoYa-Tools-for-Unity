@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.0-pre.2
+
+- Fixed CS1736 compilation failure causing Unity Safe Mode. Default recommendations are now translated when adding a result.
+
 ## Unreleased — 1.0.0 candidate
 
 - Added PhysBone Organizer as the seventh tool, with three-language guidance, armature detection, settings/reference migration and Undo.
