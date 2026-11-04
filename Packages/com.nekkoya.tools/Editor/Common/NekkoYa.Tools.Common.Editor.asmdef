@@ -1,0 +1,6 @@
+{
+  "name": "NekkoYa.Tools.Common.Editor",
+  "rootNamespace": "NekkoYa.Editor",
+  "includePlatforms": ["Editor"],
+  "autoReferenced": true
+}
