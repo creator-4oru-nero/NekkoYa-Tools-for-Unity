@@ -42,6 +42,24 @@ namespace NekkoYa.VRCDataChecker.Tests
             if (AssetDatabase.IsValidFolder(root)) AssetDatabase.DeleteAsset(root);
             EditorUtility.ClearProgressBar();
         }
+        [Test]
+        public void DefaultRecommendationUsesCurrentLanguageAndPreservesExplicitText()
+        {
+            var context = new CheckContext();
+            foreach (var language in new[] { NekkoYa.Editor.NekkoYaLanguage.JP, NekkoYa.Editor.NekkoYaLanguage.EN, NekkoYa.Editor.NekkoYaLanguage.KR })
+            {
+                NekkoYa.Editor.NekkoYaLocalization.Language = language;
+                context.Add("TEST", CheckSeverity.Info, CheckCategory.General, "Assets/test.asset", "test");
+                Assert.That(context.results.Last().recommendation,
+                    Is.EqualTo(NekkoYa.Editor.NekkoYaLocalization.Text("対象と用途を確認してください。")));
+            }
+            foreach (var text in new[] { "custom recommendation", "" })
+            {
+                context.Add("TEST", CheckSeverity.Info, CheckCategory.General, "Assets/test.asset", "test", text);
+                Assert.That(context.results.Last().recommendation, Is.EqualTo(text));
+            }
+        }
+
         private CheckContext Run(CheckTargetMode mode = CheckTargetMode.AvatarItem) => CheckRunner.Run(root, mode, TargetPlatformMode.PC, settings, (_, __) => false, () => { });
         private Material Material(string name = "material")
         {

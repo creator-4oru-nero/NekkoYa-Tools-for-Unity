@@ -72,10 +72,10 @@ namespace NekkoYa.VRCDataChecker
             if (!loaded.TryGetValue(path, out var objects)) loaded[path] = objects = AssetDatabase.LoadAllAssetsAtPath(path);
             return objects;
         }
-        public void Add(string id, CheckSeverity severity, CheckCategory category, string path, string message, string recommendation = L10n.Text("対象と用途を確認してください。"), string objectPath = null, string propertyPath = null)
+        public void Add(string id, CheckSeverity severity, CheckCategory category, string path, string message, string recommendation = null, string objectPath = null, string propertyPath = null)
         {
             results.Add(new CheckResult { ruleId = id, severity = severity, category = category, assetPath = path,
-                title = System.IO.Path.GetFileName(path), message = message, recommendation = recommendation,
+                title = System.IO.Path.GetFileName(path), message = message, recommendation = recommendation ?? L10n.Text("対象と用途を確認してください。"),
                 objectPath = objectPath, propertyPath = propertyPath, referencedBy = dependencyGraph.ReferencedBy(path) });
         }
     }
