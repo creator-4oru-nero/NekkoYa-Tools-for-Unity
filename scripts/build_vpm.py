@@ -10,8 +10,8 @@ import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
 PACKAGE = 'com.nekkoya.tools'
-REPOSITORY = 'creator-4oru-nero/NekkoYa-Tools-VPM'
-LISTING_URL = 'https://creator-4oru-nero.github.io/NekkoYa-Tools-VPM/index.json'
+REPOSITORY = 'creator-4oru-nero/NekkoYa-Tools-for-Unity'
+LISTING_URL = 'https://creator-4oru-nero.github.io/NekkoYa-Tools-for-Unity/index.json'
 
 
 def validate(manifest):

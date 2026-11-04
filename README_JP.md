@@ -15,10 +15,10 @@
 3. Unity 2022.3.22f1で開き、コンパイル完了を待ちます。開発候補版が表示されない場合はVCCのプレリリース表示設定を有効にしてください。
 
 ```text
-https://creator-4oru-nero.github.io/NekkoYa-Tools-VPM/index.json
+https://creator-4oru-nero.github.io/NekkoYa-Tools-for-Unity/index.json
 ```
 
-配布ページ: https://creator-4oru-nero.github.io/NekkoYa-Tools-VPM/
+配布ページ: https://creator-4oru-nero.github.io/NekkoYa-Tools-for-Unity/
 
 このURLはGitHub Pagesと最初のパッケージReleaseの公開後に利用できます。設定ファイルの追加だけでは公開されません。旧版スクリプトやUPMのGit導入版との二重導入を避け、プロジェクトをバックアップしてから移行してください。PhysBone OrganizerにはVRChat SDK Avatarsが別途必要です。
 

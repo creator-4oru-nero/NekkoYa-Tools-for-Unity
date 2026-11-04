@@ -33,6 +33,6 @@ PhysBone Organizerの実行にはVRChat SDK AvatarsのVRCPhysBoneが必要です
 
 [VCC導入手順 / Installation / 설치](README_JP.md) · [English](README_EN.md) · [한국어](README_KR.md)
 
-配布公開後の登録URL: `https://creator-4oru-nero.github.io/NekkoYa-Tools-VPM/index.json`
+配布公開後の登録URL: `https://creator-4oru-nero.github.io/NekkoYa-Tools-for-Unity/index.json`
 
 公開準備と未確認事項は [VCC_PUBLISHING.md](VCC_PUBLISHING.md) を参照してください。
